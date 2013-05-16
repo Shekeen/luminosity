@@ -1,12 +1,12 @@
 Name:               luminosity
-Version:            1.0
+Version:            1.1
 Cabal-Version:      >= 1.8
 Synopsis:           A simple and elegant ray tracer
--- Description:     
-Author:             Mitchell Kember
-Maintainer:         mk12360@gmail.com
+-- Description:
+Author:             Anton Guryanov (original author: Mitchell Kember)
+Maintainer:         guryanov91@gmail.com mk12360@gmail.com
 -- Homepage:        mitchellkember.com/luminosity
-Copyright:          Copyright © 2012 Mitchell Kember
+Copyright:          Copyright © 2013 Anton Guryanov
 License:            MIT
 License-file:       LICENSE.md
 Category:           Graphics
@@ -15,11 +15,11 @@ Extra-Source-Files: README.md
 
 Source-Repository head
   Type:     git
-  Location: git://github.com/mk12/luminosity.git
+  Location: git://github.com/Shekeen/luminosity.git
 
 Executable luminosity
   Main-is:          Main.hs
-  Other-Modules:    Luminosity.Colour Luminosity.Export Luminosity.Intersect Luminosity.Misc Luminosity.Parse Luminosity.Render Luminosity.Trace Luminosity.Vector
+  Other-Modules:    Luminosity.Colour Luminosity.Export Luminosity.Intersect Luminosity.Misc Luminosity.Parse Luminosity.Render Luminosity.Trace Luminosity.Vector Luminosity.Matrix
   hs-Source-Dirs:   src
   Build-Depends:    base == 4.5.*, filepath, containers, bytestring, json, blaze-builder
   ghc-options:      -O2 -fexcess-precision -funbox-strict-fields -Wall -fno-warn-type-defaults

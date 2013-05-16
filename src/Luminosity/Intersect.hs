@@ -17,6 +17,7 @@ import Data.List (sort)
 import Data.Maybe (listToMaybe)
 
 import Luminosity.Vector
+-- import Luminosity.Matrix
 
 -- | A half-line in three-dimensional Euclidean space. It consists of an initial
 -- point (represented by a position vector) which extends infinitely in one
@@ -28,9 +29,11 @@ data Ray = Ray Vector Vector  -- ^ Position and direction.
 
 -- | A simple geometrical solid in three-dimensional Euclidean space.
 --
--- Note: All functions assume that the normal vector of a 'Plane' is normalized.
-data Surface = Sphere Vector Scalar  -- ^ Position and radius.
-             | Plane  Vector Scalar  -- ^ Normal and distance from origin.
+-- Note 1: All functions assume that the normal vector of a 'Plane' is normalized.
+-- Note 2: Orientation of cube is its side's two orthogonal normals
+data Surface = Sphere Vector Scalar               -- ^ Position and radius.
+             | Plane  Vector Scalar               -- ^ Normal and distance from origin.
+--             | Cube   Vector Vector Vector Scalar -- ^ Center, orientation (2 vectors) and "radius"
              deriving (Eq, Show)
 
 -- | An extremely small positive value used to prevent problems caused by
@@ -47,6 +50,7 @@ extend t (Ray x v) = x <+> t *> v
 normal :: Surface -> Vector -> Vector
 normal (Sphere c _) x = normalize $ x <-> c
 normal (Plane  n _) _ = n
+--normal (Cube c n1 n2 s) x =
 
 -- | Calculate the closest point of intersection of a surface and ray, expressed
 -- as the distance along the ray from the initial point (often denoted as the

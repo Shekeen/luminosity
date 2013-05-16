@@ -42,7 +42,7 @@ type Scalar = Double
 -- both use the same floating-point type.
 type Vector = VectorT Scalar
 
--- | A three-dimensional Euclidean vector. 
+-- | A three-dimensional Euclidean vector.
 data VectorT a = Vector !a !a !a deriving (Eq, Bounded, Read, Show)
 
 instance Functor VectorT where
