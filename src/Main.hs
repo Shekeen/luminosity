@@ -16,13 +16,13 @@ import Luminosity.Trace (Scene, mResolutionX, mResolutionY, mSettings)
 
 -- | The current version string.
 version :: String
-version = "1.0"
+version = "1.1"
 
 -- | The help message: general information such as the version and copyright,
 -- and instructions on how to use the program (the usage message).
 help :: String
 help = "Luminosity version " ++ version
-    ++ " - Copyright 2012 Mitchell Kember\n"
+    ++ " - Copyright 2013 Anton Guryanov (special thanks to Mitchell Kember)\n"
     ++ "Usage: luminosity input_file[.json] [output_file[.tga]]"
 
 -- | @withFiles input output@ parses @input@ as a JSON representation of a
